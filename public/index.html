@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <link rel="icon" href="icons/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="GitHub-Stats-Card" content="GitHub-Stats-Card" />
+    <meta property="og:title" content="GitHub-Stats-Card App" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://kasroudra-stats-card.onrender.com/"
+    />
+    <meta name="og:image" content="./icons/desc.png" />
+    <meta
+      name="description"
+      content="Get github statistics in svg which can be used to be shown in github readme"
+      property="og:description"
+    />
+    <meta name="description" content="./icons/desc.png" property="og:image" />
+    <meta
+      name="keywords"
+      content="GitHub-Profile-Stats, Profile-Stats, GitHub-Stats, GitHub-Profile"
+      ,
+      GitHub-Stats-Card
+    />
+    <meta name="author" content="KasRoudra" />
+    <meta name="application-name" content="GitHub-Stats-Card" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@kasroudra" />
+    <meta name="twitter:creator" content="@kasroudra" />
+    <meta name="twitter:title" content="GitHub-Stats-Card" />
+    <meta
+      name="twitter:description"
+      content="Get github statistics in svg which can be used shown in github readme"
+    />
+    <meta name="twitter:image" content="./icons/desc.png" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./icons/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./icons/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./icons/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./icons/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./icons/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./icons/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./icons/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./icons/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./icons/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./icons/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./icons/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="./icons/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>GitHub Stats Card</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="mx-5">
+      <div class="mt-5 mb-5">
+        <h1>Github Stats Card</h1>
+      </div>
+      <form id="form">
+        <div class="mt-3 mb-3" id="carddiv">
+          <div class="form-floating mb-3 mt-3">
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              placeholder="ocotocat"
+            />
+            <label for="username">Your Github UserName</label>
+          </div>
+          <div class="mt-3 mb-3" id="cards">
+            <label for="card" class="label">Choose a Card</label>
+            <select class="form-select" id="card" aria-label="Choose a layout">
+              <option value="user-card" selected>User Card</option>
+              <option value="lang-card">Language Card</option>
+              <option value="repo-card">Repository Card</option>
+            </select>
+          </div>
+          <div id="user-card">
+            <div id="theme-user"></div>
+            <div id="layout-user"></div>
+            <div id="measure-user"></div>
+            <div id="color-user"></div>
+            <div class="button">
+              <button id="button-user" type="button" class="btn btn-primary">
+                Generate User Card
+              </button>
+            </div>
+          </div>
+          <div id="lang-card">
+            <div id="theme-lang"></div>
+            <div id="layout-lang"></div>
+            <div class="mt-3 mb-3" id="typediv">
+              <label for="type" class="label">Choose a Type</label>
+              <select class="form-select" id="type" aria-label="Choose a type">
+                <option value="" selected>Default (Linear)</option>
+                <option value="piechart">Pie Chart</option>
+                <option value="donut">Donut</option>
+              </select>
+            </div>
+            <div class="mt-3 mb-3" id="sortdiv">
+              <label for="sort" class="label">Choose a Sort Method</label>
+              <select class="form-select" id="sort" aria-label="Choose a type">
+                <option selected value="">None</option>
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+              </select>
+            </div>
+            <div class="mt-3 mb-3" id="numbers">
+              <div class="row">
+                <div class="col">
+                  <label for="minimum" class="label">Minimum Language % </label>
+                  <input
+                    type="number"
+                    id="minimum"
+                    class="form-control"
+                    placeholder="0.2"
+                  />
+                </div>
+                <div class="col">
+                  <label for="max_lang" class="label"
+                    >Maximum Language count</label
+                  >
+                  <input
+                    type="number"
+                    id="max_lang"
+                    class="form-control"
+                    placeholder="None"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="mt-3 mb-3" id="exclude">
+              <div class="row">
+                <div class="col">
+                  <label for="exclude_lang-lang" class="label"
+                    >Exclude Languages</label
+                  >
+                  <input
+                    type="text"
+                    id="exclude_lang-lang"
+                    class="form-control"
+                    placeholder="None"
+                  />
+                </div>
+                <div class="col">
+                  <label for="exclude_repo" class="label"
+                    >Exclude Repositories</label
+                  >
+                  <input
+                    type="text"
+                    id="exclude_repo"
+                    class="form-control"
+                    placeholder="None"
+                  />
+                </div>
+              </div>
+            </div>
+            <div id="measure-lang"></div>
+            <div id="color-lang"></div>
+            <div class="button">
+              <button id="button-lang" type="button" class="btn btn-primary">
+                Generate Language Card
+              </button>
+            </div>
+          </div>
+          <div id="repo-card">
+            <div class="form-floating mb-3 mt-3">
+              <input
+                type="text"
+                class="form-control"
+                id="reponame"
+                placeholder="ocotocat"
+              />
+              <label for="reponame">Your Repository Name</label>
+            </div>
+            <div id="theme-repo"></div>
+            <div id="layout-repo"></div>
+            <div class="mt-3 mb-3" id="exclude">
+              <div class="row">
+                <div class="col">
+                  <label for="exclude_lang-repo" class="label"
+                    >Exclude Languages</label
+                  >
+                  <input
+                    type="text"
+                    id="exclude_lang-repo"
+                    class="form-control"
+                    placeholder="None"
+                  />
+                </div>
+                <div class="col">
+                  <label for="exclude_stat" class="label">Exclude Stats</label>
+                  <input
+                    type="text"
+                    id="exclude_stat"
+                    class="form-control"
+                    placeholder="None"
+                  />
+                </div>
+              </div>
+            </div>
+            <div id="measure-repo"></div>
+            <div id="color-repo"></div>
+            <div class="button">
+              <button id="button-repo" type="button" class="btn btn-primary">
+                Generate Repo Card
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="remain">
+        Requests Remaining <span id="remaining">5000</span>
+      </div>
+      <div class="card">
+        <div class="card-img">
+          <img id="image" src="" />
+        </div>
+        <div class="card-body">
+          <div class="buttons">
+            <button id="button-html" type="button" class="btn btn-primary">
+              Copy HTML (html)
+            </button>
+            <button id="button-md" type="button" class="btn btn-primary">
+              Copy MarkDown (md)
+            </button>
+            <button id="button-url" type="button" class="btn btn-primary">
+              Go to URL
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="icons">
+        <a href="https://github.com/KasRoudra" target="_blank"
+          ><img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg"
+            alt="github"
+            class="socicon"
+        /></a>
+        <a href="mailto:kasroudrakrd@gmail.com" target="_blank"
+          ><img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/gmail.svg"
+            alt="email"
+            class="socicon"
+        /></a>
+        <a href="https://facebook.com/KasRoudra" target="_blank"
+          ><img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/facebook.svg"
+            alt="facebook"
+            class="socicon"
+        /></a>
+        <a href="https://m.me/KasRoudra" target="_blank"
+          ><img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/messenger.svg"
+            alt="messenger"
+            class="socicon"
+        /></a>
+      </div>
+      <div>
+        <p class="footer-text mb-3">
+          Made with <span role="img">❤️</span> by
+          <a href="https://github.com/KasRoudra" target="_blank">KasRoudra</a>
+        </p>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
