@@ -103,7 +103,11 @@ const userDeepCard = (
       font-size: ${bioFontSize}em;
       margin: 5px 10px;
       color: ${color};
-      box-shadow: inset 0px 5px 10px ${bgcolor};
+      box-shadow: ${
+        bggrad=="none"
+          ? `inset 0px 5px 10px ${bgcolor}`
+          : "none"
+      };
       overflow: hidden;
       /*max-height: 3.6em;
       line-height: 1.25em;*/
@@ -440,7 +444,7 @@ const userDeepCard = (
         animation-name: slideRight;
       }
       .octicon {
-        fill: rgb(88, 96, 105);
+        fill: ${color};
         margin-right: 1ch;
         vertical-align: top;
       }
