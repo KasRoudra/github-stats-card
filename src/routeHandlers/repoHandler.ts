@@ -27,9 +27,9 @@ const repoHandler = async (req: Request, res: Response) => {
     const hide_zero = req.query.hide_zero;
     const hide_lang = req.query.hide_lang as string;
     const width =
-      (req.query.width as string) || (layout === "compact" ? "500" : "340");
+      (req.query.width as string) || "370";
     const height =
-      (req.query.height as string) || (layout === "compact" ? "350" : "300");
+      (req.query.height as string) || (layout === "compact" ? "220" : "280");
     const scale = (req.query.scale as string) || "1";
     const hcolor = parseColor(req.query.hcolor as string) || theme.hcolor;
     const color = parseColor(req.query.color as string) || theme.color;
@@ -62,7 +62,7 @@ const repoHandler = async (req: Request, res: Response) => {
       hashedGrads.push(parseColor(grad));
     }
     const finalGrad = hashedGrads.join(",");
-    const bggrad = grads ? "linear-gradient(" + finalGrad + ")" : "none";
+    const bggrad = finalGrad ? "linear-gradient(" + finalGrad + ")" : "none";
     const query = {
       query: `
             query {

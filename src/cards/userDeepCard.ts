@@ -53,21 +53,15 @@ const userDeepCard = (
       transform: scale(${scale});
     }
     
-    #background {
-      width: calc(100% - 10px);
-      height: calc(100% - 10px);
-      fill: transparent;
-      stroke: rgb(225, 228, 232);
-      stroke-width: 0px;
-    }
-    
+
     foreignObject {
-      width: calc(100% - 10px - 32px);
-      height: calc(100% - 10px - 32px);
+      width: calc(100% - 40px);
+      height: calc(100% - 40px);
     }
+
     .main {
-      width: ${width};
-      height: ${height};
+      width: calc(100% - 2px); /*Half of border-radius*/
+      height: calc(100% - 2px);
       border: 1px solid #e1e4e8;
       border-width: ${bdwidth}px;
       border-color: ${bdcolor};
@@ -95,7 +89,7 @@ const userDeepCard = (
       transform: translateX(4%);
       font-size: ${titleFontSize}em;
       font-weight: bold;
-      color: ${color};
+      color: ${hcolor};
     }
     .bio {
       flex-basis: 40%;
@@ -104,9 +98,7 @@ const userDeepCard = (
       margin: 5px 10px;
       color: ${color};
       box-shadow: ${
-        bggrad=="none"
-          ? `inset 0px 5px 10px ${bgcolor}`
-          : "none"
+        bggrad == "none" ? `inset 0px 5px 10px ${bgcolor}` : "none"
       };
       overflow: hidden;
       /*max-height: 3.6em;
@@ -167,11 +159,8 @@ const userDeepCard = (
       border: 2px solid blue;
     }
     </style>
-    <g>
-    <rect x="5" y="5" id="background" />
-    <g>
        
-    <foreignObject x="21" y="21" width="318" height="168">
+    <foreignObject x="21" y="21">
     <div xmlns="http://www.w3.org/1999/xhtml" class="main">
     <div class="container">
       ${
@@ -366,8 +355,6 @@ const userDeepCard = (
      </div>
     </div>
    </foreignObject>
-  </g>
- </g>
 </svg>`;
   else
     return `<svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg" id="card">
@@ -384,16 +371,15 @@ const userDeepCard = (
         transform: scale(${scale});
       }
 
-      #background {
-        width: calc(100% - 10px);
-        height: calc(100% - 10px);
-        fill: transparent;
-        stroke: rgb(225, 228, 232);
-        stroke-width: 0px;
+
+      foreignObject {
+        width: calc(100% - 40px);
+        height: calc(100% - 40px);
       }
+
       .body {
-        width: ${width};
-        height: ${height};
+        width: calc(100% - 2px); /*Half of border-radius*/
+        height: calc(100% - 2px);
         padding: 5%;
         border: 1px solid rgb(225, 228, 232);
         border-width: ${bdwidth}px;
@@ -401,10 +387,6 @@ const userDeepCard = (
         border-radius: 4px;
         background-color: ${bgcolor};
         background-image: ${bggrad};
-      }
-      foreignObject {
-        width: calc(100% - 10px - 32px);
-        height: calc(100% - 10px - 32px);
       }
   
       table {
@@ -420,6 +402,7 @@ const userDeepCard = (
         padding-top: 0;
         text-align: left;
         font-size: 14px;
+        font-family: "Inter", Helvetica, Arial, serif;
         font-weight: 600;
         color: ${hcolor};
       }
@@ -473,15 +456,12 @@ const userDeepCard = (
         }
       }
     </style>
-    <g>
-      <rect x="5" y="5" id="background" />
-      <g>
-        <foreignObject x="21" y="21" width="318" height="168">
+        <foreignObject x="21" y="21">
           <div xmlns="http://www.w3.org/1999/xhtml" class="body">
             <table>
               <thead>
                 <tr style="transform: translateX(0)">
-                  <th colspan="2" id="name">${name}'s GitHub Statistics</th>
+                  <th colspan="2">${name}'s GitHub Statistics</th>
                 </tr>
               </thead>
               <tbody>
@@ -673,8 +653,6 @@ const userDeepCard = (
             </table>
           </div>
         </foreignObject>
-      </g>
-    </g>
   </svg>
   `;
 };

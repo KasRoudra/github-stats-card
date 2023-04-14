@@ -41,7 +41,7 @@ const userDeepHandler = async (req: Request, res: Response) => {
       hashedGrads.push(parseColor(grad));
     }
     const finalGrad = hashedGrads.join(",");
-    const bggrad = grads ? "linear-gradient(" + finalGrad + ")" : "none";
+    const bggrad = finalGrad ? "linear-gradient(" + finalGrad + ")" : "none";
     const resize = Boolean(req.query.resize as string);
     const query = {
       query: `

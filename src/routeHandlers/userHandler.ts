@@ -23,7 +23,7 @@ const userHandler = async (req: Request, res: Response) => {
     const width =
       (req.query.width as string) || (layout === "compact" ? "410" : "360");
     const height =
-      (req.query.height as string) || (layout === "compact" ? "310" : "300");
+      (req.query.height as string) || (layout === "compact" ? "280" : "300");
     const scale = (req.query.scale as string) || "1";
     const hcolor = parseColor(req.query.hcolor as string) || theme.hcolor;
     const color = parseColor(req.query.color as string) || theme.color;
@@ -41,7 +41,7 @@ const userHandler = async (req: Request, res: Response) => {
       hashedGrads.push(parseColor(grad));
     }
     const finalGrad = hashedGrads.join(",");
-    const bggrad = grads ? "linear-gradient(" + finalGrad + ")" : "none";
+    const bggrad = finalGrad ? "linear-gradient(" + finalGrad + ")" : "none";
     const resize = Boolean(req.query.resize as string);
     const query = {
       query: `

@@ -166,26 +166,17 @@ const langCard = (
       line-height: 32px;
       color: ${hcolor};
     }
-    #background {
-      width: calc(100% - 10px);
-      height: calc(100% - 10px);
-      fill: transparent;
-      stroke: rgb(225, 228, 232);
-      stroke-width: 0px;
-    }
 
     foreignObject {
-      width: calc(100% - 10px - 32px);
-      height: calc(100% - 10px - 32px);
+      width: calc(100% - 20px);
+      height: calc(100% - 20px);
     }
     .body {
-      width: ${width};
-      height: ${height};
-      padding: 5% 8%;
-      padding-bottom: 10%;
-      border: 1px solid #e1e4e8;
-      border-width: ${bdwidth}px;
-      border-color: ${bdcolor};
+      width: calc(84% - 2px); /*Half of border-radius*/
+      height: calc(81% - 2px);
+      padding: 5%;
+      padding-left: 7%;
+      border: ${bdwidth}px solid ${bdcolor};
       border-radius: 4px;
       background-color: ${bgcolor};
       background-image: ${bggrad};
@@ -203,7 +194,6 @@ const langCard = (
       margin-bottom: 7px;
       position: relative;
       background: #ddddee;
-      -moz-border-radius: 12px;
       -webkit-border-radius: 12px;
       border-radius: 12px;
     }
@@ -254,6 +244,7 @@ const langCard = (
       background-color: ${bgcolor};
       display: flex;
       flex-wrap: wrap;
+      padding: 2% 0;
       justify-content: space-between;
     }
     .langs {
@@ -318,14 +309,9 @@ const langCard = (
       font-size: 1.5rem;
     }
   </style>
-  <g>
-    <rect x="5" y="5" id="background" />
-    <g>
-      <foreignObject x="21" y="21" width="318" height="168">
+    <foreignObject x="21" y="21">
         <div xmlns="http://www.w3.org/1999/xhtml" class="body">${cardBody}</div>
       </foreignObject>
-    </g>
-  </g>
 </svg>
 `;
 };

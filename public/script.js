@@ -84,7 +84,7 @@ $(document).ready(() => {
                   <label for="color-${id}" class="label">Text Color</label>
                   <input
                     type="color"
-                    id="color-${id}"
+                    id="tcolor-${id}"
                     class="form-control"
                     placeholder="000"
                   />
@@ -119,9 +119,10 @@ $(document).ready(() => {
     const username = $("#username").val();
     const theme = $("#theme-user :selected").val();
     const layout = $("#layout-user :selected").val();
-    const color = $("#color-user").val().slice(1);
+    const color = $("#tcolor-user").val().slice(1);
     const bgcolor = $("#bgcolor-user").val().slice(1);
     const hcolor = $("#hcolor-user").val().slice(1);
+    console.log({ color, hcolor, bgcolor });
     if (username) url = `/user?user=${username}`;
     if (url) {
       if (theme) url += `&theme=${theme}`;
@@ -142,7 +143,7 @@ $(document).ready(() => {
     const sort = $("#sort").val();
     const width = $("#width-lang").val();
     const height = $("#height-lang").val();
-    const color = $("#color-lang").val().slice(1);
+    const color = $("#tcolor-lang").val().slice(1);
     const bgcolor = $("#bgcolor-lang").val().slice(1);
     const hcolor = $("#hcolor-lang").val().slice(1);
     const minimum = $("#minimum").val();
@@ -176,7 +177,7 @@ $(document).ready(() => {
     const layout = $("#layout-repo :selected").val();
     const width = $("#width-repo").val();
     const height = $("#height-repo").val();
-    const color = $("#color-repo").val().slice(1);
+    const color = $("#tcolor-repo").val().slice(1);
     const bgcolor = $("#bgcolor-repo").val().slice(1);
     const hcolor = $("#hcolor-repo").val().slice(1);
     const exclude_stat = $("#exclude_stat").val();

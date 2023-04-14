@@ -16,7 +16,7 @@ const langHandler = async (req: Request, res: Response) => {
     const type = types[req.query.type as string] || "linear";
     let max_lang: string | number = req.query.max_lang as string;
     let height: string | number = req.query.height as string;
-    const width = (req.query.width as string) || "480";
+    const width = (req.query.width as string) || "460";
     const scale = (req.query.scale as string) || "1";
     const sort = req.query.sort as string;
     const minimum = req.query.minimum || 0.2;
@@ -38,7 +38,7 @@ const langHandler = async (req: Request, res: Response) => {
       hashedGrads.push(parseColor(grad));
     }
     const finalGrad = hashedGrads.join(",");
-    const bggrad = grads ? "linear-gradient(" + finalGrad + ")" : "none";
+    const bggrad = finalGrad ? "linear-gradient(" + finalGrad + ")" : "none";
     const excluded_langs = exclude_lang
       ? exclude_lang.includes(",")
         ? exclude_lang.split(",")
@@ -137,9 +137,9 @@ const langHandler = async (req: Request, res: Response) => {
               if (!height) {
                 layout === "compact"
                   ? type === "linear"
-                    ? (height = 210 + langsArray.length * 25)
-                    : (height = 410 + langsArray.length * 25)
-                  : (height = 180 + langsArray.length * 60);
+                    ? (height = 120 + langsArray.length * 25)
+                    : (height = 350 + langsArray.length * 25)
+                  : (height = 120 + langsArray.length * 60);
               }
               if (sort === "asc")
                 langsArray.sort((x, y) => x.percentage - y.percentage);

@@ -51,21 +51,14 @@ const userCard = (
       transform: scale(${scale});
     }
     
-    #background {
-      width: calc(100% - 10px);
-      height: calc(100% - 10px);
-      fill: transparent;
-      stroke: rgb(225, 228, 232);
-      stroke-width: 0px;
-    }
-    
     foreignObject {
-      width: calc(100% - 10px - 32px);
-      height: calc(100% - 10px - 32px);
+      width: calc(100% - 40px);
+      height: calc(100% - 40px);
     }
+
     .main {
-      width: ${width};
-      height: ${height};
+      width: calc(100% - 2px); /*Half of border-radius*/
+      height: calc(100% - 2px);
       border: 1px solid #e1e4e8;
       border-width: ${bdwidth}px;
       border-color: ${bdcolor};
@@ -74,10 +67,9 @@ const userCard = (
       background-image: ${bggrad};
     }
     .container {
-      width: 320px;
-      height: 220px;
+      width: calc(100% - 42px);
+      height: calc(100% - 42px);
       padding: 5%;
-      padding-top: 0px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -90,10 +82,10 @@ const userCard = (
       justify-content: space-between;
     }
     .title {
-      transform: translateX(4%);
+      transform: translateX(4%) translateY(-20%);
       font-size: ${titleFontSize}em;
       font-weight: bold;
-      color: ${color};
+      color: ${hcolor};
     }
     .bio {
       flex-basis: 40%;
@@ -102,9 +94,7 @@ const userCard = (
       margin: 5px 10px;
       color: ${color};
       box-shadow: ${
-        bggrad=="none"
-          ? `inset 0px 5px 10px ${bgcolor}`
-          : "none"
+        bggrad === "none" ? `inset 0px 5px 10px ${bgcolor}` : "none"
       };
       overflow: hidden;
       /*max-height: 3.6em;
@@ -163,9 +153,6 @@ const userCard = (
       border: 2px solid blue;
     }
     </style>
-    <g>
-    <rect x="5" y="5" id="background" />
-    <g>
        
     <foreignObject x="21" y="21" width="338" height="198">
     <div xmlns="http://www.w3.org/1999/xhtml" class="main">
@@ -435,15 +422,12 @@ const userCard = (
         }
       }
     </style>
-    <g>
-      <rect x="5" y="5" id="background" />
-      <g>
         <foreignObject x="21" y="21" width="318" height="168">
           <div xmlns="http://www.w3.org/1999/xhtml" class="body">
             <table>
               <thead>
                 <tr style="transform: translateX(0)">
-                  <th colspan="2" id="name">${name}'s GitHub Statistics</th>
+                  <th colspan="2">${name}'s GitHub Statistics</th>
                 </tr>
               </thead>
               <tbody>
@@ -598,8 +582,6 @@ const userCard = (
             </table>
           </div>
         </foreignObject>
-      </g>
-    </g>
   </svg>
   `;
 };

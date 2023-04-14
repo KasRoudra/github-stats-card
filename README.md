@@ -1,7 +1,5 @@
 # GitHub-Stats-Card
 
-
-
 [![Author](https://img.shields.io/badge/Author-KasRoudra-purple?style=for-the-badge)](https://github.com/KasRoudra)
 [![Opensource](https://img.shields.io/badge/Open%20Source-Yes-cyan?style=for-the-badge)](./LICENSE)
 ![JavaScript](https://img.shields.io/badge/Written%20In-JS-blue?style=for-the-badge)

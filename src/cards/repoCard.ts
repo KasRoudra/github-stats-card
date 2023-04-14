@@ -37,41 +37,35 @@ const repoCard = (
     transform: scale(${scale});
   }
   
-  #background {
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
-    fill: transparent;
-    stroke: rgb(225, 228, 232);
-    stroke-width: 0px;
-  }
   
   foreignObject {
-    width: calc(100% - 10px - 32px);
-    height: calc(100% - 10px - 32px);
-  }
-  .main {
-    width: ${width};
-    height: ${height};
-    border: 1px solid #e1e4e8;
-    border-width: ${bdwidth}px;
-    border-color: ${bdcolor};
-    border-radius: 4px;
-    background-color: ${bgcolor};
-    background-image: ${bggrad};
-  }
+      width: calc(100% - 30px);
+      height: calc(100% - 40px);
+    }
+
+    .main {
+      width: calc(100% - 2px); /*Half of border-radius*/
+      height: calc(100% - 2px);
+      border: 1px solid #e1e4e8;
+      border-width: ${bdwidth}px;
+      border-color: ${bdcolor};
+      border-radius: 4px;
+      background-color: ${bgcolor};
+      background-image: ${bggrad};
+    }
+    .container {
+      width: calc(100% - 42px);
+      height: calc(100% - 42px);
+      padding: 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-bottom: -10px;
+    }
 
    /* Designed and coded by KasRoudra(https://github.com/KasRoudra) */
 
-  .container {
-    width: 90%;
-    height: 90%;
-    padding: 5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-bottom: -10px;
-  }
   .head {
     flex-basis: 10%;
     width: 95%;
@@ -79,6 +73,7 @@ const repoCard = (
     justify-content: left;
     align-items: center;
     padding: 3% 2%;
+    padding-top: 6%;
   }
   .title {
     font-family: "Inter", Helvetica, Arial, serif;
@@ -126,6 +121,7 @@ const repoCard = (
   }
   .count {
     padding: 2px;
+    padding-top: 5px;
     color: ${color};
   }
   .langs {
@@ -147,7 +143,7 @@ const repoCard = (
     color: ${color};
   }
   .octicon {
-    color: ${color};
+    fill: ${color};
   }
   .circle {
     width: 10px;
@@ -155,11 +151,8 @@ const repoCard = (
     border-radius: 5px;
   }
   </style>
-  <g>
-  <rect x="5" y="5" id="background" />
-  <g>
      
-  <foreignObject x="21" y="21" width="318" height="168">
+  <foreignObject x="21" y="21">
   <div xmlns="http://www.w3.org/1999/xhtml" class="main">
   <div class="container">
       <div class="head">
@@ -367,8 +360,6 @@ const repoCard = (
      </div>
     </div>
    </foreignObject>
-  </g>
- </g>
 </svg>
   `;
   else
@@ -382,19 +373,13 @@ const repoCard = (
         line-height: 21px;
       }
   
-      #background {
-        fill: transparent;
-        width: calc(100% - 10px);
-        height: calc(100% - 10px);
-      }
-  
       foreignObject {
-        width: calc(100% - 10px - 32px);
-        height: calc(100% - 10px - 32px);
+        width: calc(100% - 10px);
+        height: calc(100% - 20px);
       }
       .body {
-        width: ${width};
-        height: ${height};
+        width: calc(80% - 2px); /*Half of border-radius*/
+        height: calc(80% - 2px);
         padding: 5%;
         border: 1px solid rgb(225, 228, 232);
         border-width: ${bdwidth}px;
@@ -403,6 +388,7 @@ const repoCard = (
         background-color: ${bgcolor};
         background-image: ${bggrad};
       }
+      
       table {
         width: 100%;
         border-collapse: collapse;
@@ -413,8 +399,9 @@ const repoCard = (
         padding: 0.5em;
         padding-top: 0;
         text-align: left;
-        font-size: 14px;
-        font-weight: 600;
+        font-size: 1em;
+        font-family: "Inter", Helvetica, Arial, serif;
+        font-weight: 700;
         color: ${hcolor};
       }
 
@@ -440,7 +427,7 @@ const repoCard = (
         animation-name: slideRight;
       }
       .octicon {
-        fill: rgb(88, 96, 105);
+        fill: ${color};
         margin-right: 1ch;
         vertical-align: top;
       }
@@ -469,15 +456,12 @@ const repoCard = (
         }
       }
     </style>
-    <g>
-      <rect x="5" y="5" id="background" />
-      <g>
-        <foreignObject x="21" y="21" width="318" height="168">
+        <foreignObject x="21" y="21">
           <div xmlns="http://www.w3.org/1999/xhtml" class="body">
             <table>
               <thead>
                 <tr style="transform: translateX(0)">
-                  <th colspan="2" id="name">${name}'s GitHub Statistics</th>
+                  <th colspan="2">${name}'s GitHub Statistics</th>
                 </tr>
               </thead>
               <tbody>
@@ -613,8 +597,6 @@ const repoCard = (
             </table>
           </div>
         </foreignObject>
-      </g>
-    </g>
   </svg>
   
   `;
