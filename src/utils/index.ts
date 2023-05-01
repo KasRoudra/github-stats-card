@@ -1,4 +1,5 @@
-import emoji from "node-emoji";
+import { join, resolve } from "path";
+import { emojify } from "node-emoji";
 import fetch from "cross-fetch";
 
 const parseImage = async (imageUrl: string) => {
@@ -12,7 +13,7 @@ const parseImage = async (imageUrl: string) => {
 
 const parseString = (str: string) => {
   if (!str) return "";
-  return emoji.emojify(str.replace(/&/g, "&amp;"));
+  return emojify(str.replace(/&/g, "&amp;"));
 };
 
 const parseColor = (str: string) => {
@@ -46,6 +47,8 @@ const parseNumber = (num: number, digits = 1) => {
     : "0";
 };
 
+const parsePath = (url: string) => join(resolve(), url);
+
 const capitalize = (str: string) => str.charAt(0).toUpperCase() + str.slice(1);
 
 const makeRound = (num: number, digits = 2) =>
@@ -67,6 +70,7 @@ export {
   parseNumber,
   parseString,
   parseImage,
+  parsePath,
   capitalize,
   makeRound,
   layouts,

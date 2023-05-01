@@ -27,9 +27,9 @@ const repoHandler = async (req: Request, res: Response) => {
     const hide_zero = req.query.hide_zero;
     const hide_lang = req.query.hide_lang as string;
     const width =
-      (req.query.width as string) || "370";
+      (req.query.width as string) || (layout === "compact" ? "420" : "370");
     const height =
-      (req.query.height as string) || (layout === "compact" ? "220" : "280");
+      (req.query.height as string) || (layout === "compact" ? "240" : "280");
     const scale = (req.query.scale as string) || "1";
     const hcolor = parseColor(req.query.hcolor as string) || theme.hcolor;
     const color = parseColor(req.query.color as string) || theme.color;
@@ -146,8 +146,8 @@ const repoHandler = async (req: Request, res: Response) => {
                 ? capitalize(repo.name)
                 : repo.name;
               const description = repo.description
-                ? repo.description.length > 120
-                  ? parseString(repo.description.slice(0, 120)) + "..."
+                ? repo.description.length > 140
+                  ? parseString(repo.description.slice(0, 140)) + "..."
                   : parseString(repo.description)
                 : "No description provided";
               const languages = repo.languages;

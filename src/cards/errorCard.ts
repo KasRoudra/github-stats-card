@@ -59,8 +59,6 @@ const errorCard = (message: string) => {
           </table>
         </div>
       </foreignObject>
-    </g>
-  </g>
 </svg>
 `;
 };

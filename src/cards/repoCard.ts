@@ -39,30 +39,30 @@ const repoCard = (
   
   
   foreignObject {
-      width: calc(100% - 30px);
-      height: calc(100% - 40px);
-    }
+    width: calc(100% - 30px);
+    height: calc(100% - 40px);
+  }
 
-    .main {
-      width: calc(100% - 2px); /*Half of border-radius*/
-      height: calc(100% - 2px);
-      border: 1px solid #e1e4e8;
-      border-width: ${bdwidth}px;
-      border-color: ${bdcolor};
-      border-radius: 4px;
-      background-color: ${bgcolor};
-      background-image: ${bggrad};
-    }
-    .container {
-      width: calc(100% - 42px);
-      height: calc(100% - 42px);
-      padding: 5%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      padding-bottom: -10px;
-    }
+  .main {
+    width: calc(100% - 2px); /*Half of border-radius*/
+    height: calc(100% - 2px);
+    border: 1px solid #e1e4e8;
+    border-width: ${bdwidth}px;
+    border-color: ${bdcolor};
+    border-radius: 4px;
+    background-color: ${bgcolor};
+    background-image: ${bggrad};
+  }
+  .container {
+    width: calc(100% - 42px);
+    height: calc(100% - 42px);
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: -10px;
+  }
 
    /* Designed and coded by KasRoudra(https://github.com/KasRoudra) */
 
@@ -87,13 +87,14 @@ const repoCard = (
   }
   .body {
     display: flex;
+    height: 100%;
     flex-basis: 30%;
     flex-flow: column wrap;
     justify-content: space-between;
   }
   .description {
-    height: 20%;
-    width: 95%;
+    max-height: 42%;
+    width: 100%;
     font-size: 1.1rem;
     overflow: hidden;
     line-height: 1.5;
@@ -114,14 +115,16 @@ const repoCard = (
     justify-content: flex-start;
   }
   .stat {
-    padding: 0 4px;
+    padding: 0 3px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   .count {
-    padding: 2px;
-    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1px;
     color: ${color};
   }
   .langs {

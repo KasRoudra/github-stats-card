@@ -26,6 +26,7 @@ import {
   themeHandler,
   limitHandler,
 } from "./routeHandlers";
+import { parsePath } from "./utils";
 
 const port = process.env.PORT || 5000;
 
@@ -41,7 +42,7 @@ app.use((_, res, next) => {
 });
 // Root route serving static files
 
-app.use("/", express.static("public"));
+app.use("/", express.static(parsePath("public")));
 
 // API Routes
 
