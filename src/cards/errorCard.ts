@@ -44,9 +44,7 @@ const errorCard = (message: string) => {
       animation-fill-mode: forwards;
     }
   </style>
-  <g>
     <rect x="5" y="5" id="background" />
-    <g>
       <foreignObject x="21" y="21" width="318" height="168">
         <div xmlns="http://www.w3.org/1999/xhtml">
           <table>
